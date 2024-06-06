@@ -11,8 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$name', '$last_name', '$email', '$hobby')";
 
     if ($conn->query($sql) === TRUE) {
-        header('Location: ../index.php');
-        exit; 
+        echo "<script>alert('User created successfully'); window.location.href = '../index.php';</script>";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

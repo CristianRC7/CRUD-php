@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User List</title>
+    <title>CRUD php</title>
     <link rel="stylesheet" href="frontend/style.css">
 </head>
 <body>
@@ -34,8 +34,8 @@
                     echo "<td>" . $row["email"] . "</td>";
                     echo "<td>" . $row["hobby"] . "</td>";
                     echo '<td class="actions">
+                            <a href="page/edit_data.php?id=' . $row["id"] . '"><button>Edit</button></a>
                             <button onclick="deleteUser(' . $row["id"] . ')">Delete</button>
-                            <button>Edit</button>
                           </td>';
                     echo "</tr>";
                 }
@@ -52,11 +52,11 @@
         function deleteUser(id) {
             if (confirm('Are you sure you want to delete this user?')) {
                 fetch('backend/delete.php?id=' + id)
-                    .then(response => {
-                        if (response.ok) {
-                            location.reload();
-                        } else {
-                            throw new Error('Error deleting user');
+                    .then(response => response.json())
+                    .then(data => {
+                        alert(data.message);
+                        if (data.status === 'success') {
+                            window.location.href = 'index.php';
                         }
                     })
                     .catch(error => console.error('Error:', error));

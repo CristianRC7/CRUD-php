@@ -1,19 +1,54 @@
-table {
-    width: 100%;
-    border-collapse: collapse;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-table, th, td {
-    border: 1px solid black;
+h1 {
+    color: #333;
+    margin-top: 20px;
+}
+
+.add-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #45a049;
+}
+
+table {
+    width: 80%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+    background-color: white;
 }
 
 th, td {
-    padding: 8px;
+    padding: 12px;
     text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
 }
 
 .center-text {
@@ -21,10 +56,32 @@ th {
 }
 
 .actions {
-    width: 100px;
+    width: 150px;
     text-align: center;
 }
 
-.add-button {
-    margin-top: 10px;
+.actions button {
+    padding: 5px 10px;
+    margin: 2px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.actions button:hover {
+    opacity: 0.8;
+}
+
+.actions button:first-of-type {
+    background-color: #f44336;
+}
+
+.actions button:last-of-type {
+    background-color: #008CBA;
+}
+
+.actions a button {
+    background-color: #008CBA;
 }

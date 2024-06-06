@@ -1,0 +1,30 @@
+//database
+create database crud
+
+//table
+create table personal_information (
+	id int PRIMARY KEY AUTO_INCREMENT not null,
+    name varchar(99) not null,
+    last_name varchar(99) not null,
+    email varchar(99),
+    hobby varchar(255)
+);
+
+//inserts
+insert into personal_information (name, last_name, email, hobby)
+VALUES ('John', 'Doe', 'wKlLw@example.com', 'Soccer');
+
+INSERT INTO personal_information (name, last_name, email, hobby)
+VALUES ('Juan', 'Pérez', 'juan@example.com', 'Reading');
+
+INSERT INTO personal_information (name, last_name, email, hobby)
+VALUES ('María', 'García', 'maria@example.com', 'Painting');
+
+INSERT INTO personal_information (name, last_name, email, hobby)
+VALUES ('Carlos', 'Martínez', 'carlos@example.com', 'Watch football');
+
+INSERT INTO personal_information (name, last_name, email, hobby)
+VALUES ('Ana', 'López', 'ana@example.com', 'Travel');
+
+INSERT INTO personal_information (name, last_name, email, hobby)
+VALUES ('Pedro', 'Sánchez', 'pedro@example.com', 'Cooking');
